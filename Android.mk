@@ -42,6 +42,9 @@ LOCAL_SRC_FILES := \
 LOCAL_CFLAGS := -DANDROID
 LOCAL_CFLAGS += -Wno-sequence-point -Wno-extra
 
+# Disable extra -O3 flags
+LOCAL_CFLAGS += -fno-inline-functions -fno-unswitch-loops -fno-predictive-commoning -fno-gcse-after-reload -fno-tree-vectorize -fno-vect-cost-model -fno-tree-partial-pre -fno-ipa-cp-clone
+
 LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/libAACdec/include \
         $(LOCAL_PATH)/libAACenc/include \
